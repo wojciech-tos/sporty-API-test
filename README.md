@@ -27,7 +27,7 @@
 - Run random tests
 > pytest --html=report.html -m random
 
-
+## Tests scenarios
 | Test | Verification |
 | ------ | ------ |
 | test_get_all_authors | check all authors expected count, check if expected authors exist in all authors, check if fake author not exist in all authors |
