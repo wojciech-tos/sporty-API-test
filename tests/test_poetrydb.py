@@ -59,7 +59,7 @@ def test_get_specific_data_by_author():
     response = requests.get(generate_url(BASE_URL, AUTHORS_ENDPOINT, SAMPLE_AUTHORS[0], ",".join(SAMPLE_AUTHOR_FIELDS)))
     assert_correct_response(response)
     assert len(response.json()) == EXPECTED_SHAKESPREARE_POEMS_COUNT
-    assert next((True for x in response.json() if x == EXPECTED_SHAKESPREARE_POEM), False)
+    assert any(x == EXPECTED_SHAKESPREARE_POEM for x in response.json())
 
 @pytest.mark.author
 def test_get_404_response_on_unknown_author():
@@ -73,7 +73,7 @@ def test_get_titles_by_keyword():
     response = requests.get(generate_url(BASE_URL, TITLE_ENDPOINT, SAMPLE_KEYWORD, "title"))
     assert_correct_response(response)
     assert len(response.json()) == EXPECTED_SPRING_POEMS_COUNT
-    assert next((True for x in response.json() if SAMPLE_KEYWORD in x["title"]), False)
+    assert all(SAMPLE_KEYWORD.casefold() in x["title"].casefold() for x in response.json())
 
 @pytest.mark.title
 def test_get_title_by_exact_match_title():
