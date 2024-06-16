@@ -27,8 +27,4 @@
 - Run random tests
 > pytest --html=report.html -m random
 
-After test succeeds a screenshot and report will be generated in main folder (**screenshot.png** and **report.html**)
-
-INFO:
-There is a bug with closing cookies popup on twitch website. I implemented a workaround. Video record with this bug is in folder **misc/twitch_bugs**.
-There is a problem with Chrome and webdriver ActionChains scroll page functionality. I implemented a workaround for that too.
+After test succeeds a report will be generated in main folder (**report.html**).
