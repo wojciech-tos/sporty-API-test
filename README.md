@@ -3,7 +3,7 @@
 ## How to run PoetryAPI test:
 
 - Clone this repository locally
-- Enter main folder **sporty_WAP_task**
+- Enter main folder **sporty_API_task**
 - Install, create and activate virtual environment
 > pip install virtualenv
 
